@@ -51,7 +51,7 @@ public class CalculatorController {
         Expression expression = new Expression(expressionStr);
         try {
             EvaluationValue result = expression.evaluate();
-            return String.format("%7.2f",result.getNumberValue());
+            return result.getNumberValue().toString();
         } catch (ParseException e) {
             throw new RuntimeException(e);
         } catch (EvaluationException e) {
